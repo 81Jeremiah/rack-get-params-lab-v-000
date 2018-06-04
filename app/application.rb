@@ -13,16 +13,16 @@ class Application
     elsif req.path.match(/add/)
       new_item = req.params["item"]
       if @@items.include?(new_item)
-        @@cart << new_item 
+        @@cart << new_item
       else
-        resp.write "We don't have that item"   
+        resp.write "We don't have that item"
       end
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
     elsif req.path.match(/cart/)
       if @@cart != []
-        @@cart.each{|item|resp.write "#{item}\n"}    
+        @@cart.each{|item|resp.write "#{item}\n"}
       else
         resp.write "Your cart is empty"
       end
