@@ -18,9 +18,9 @@ class Application
         resp.write "Your cart is empty"
       else
         @@items.each{|item|resp.write "#{item}"}
-      end
     else
       resp.write "Path Not Found"
+    end
     end
 
     resp.finish
