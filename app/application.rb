@@ -17,10 +17,10 @@ class Application
       if @@items = []
         resp.write "Your cart is empty"
       else
-        @@items.each{|item|resp.write "#{item}"}
+        @@items.each{|item|resp.write "#{item}\n"}
     else
       resp.write "Path Not Found"
-    end
+      end
     end
 
     resp.finish
